@@ -1,103 +1,257 @@
-import Image from "next/image";
+'use client'
+import React from 'react';
+import DessertCard from '@/components/DessertCard';
+import { Dessert } from '@/types/dessert';
+import { motion } from 'framer-motion';
+import { ArrowRight, Cake, Heart, Truck } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { bebas } from "@/components/fonts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/card";
+import ContactForm from '@/components/ContactForm';
+import Link from "next/link";
+import "@/public/styles/estilo.css"
+import Carousel from '../components/Carousel';
 
-export default function Home() {
+
+var lkmimail = "mailto:robguter114@gmail.com, robgutgom@hotmail.com";
+var lkmigith = "https://github.com/robguter";
+var imglogo = 'images/logo_pavlova.png'
+
+// --- Datos Mock ---
+const featuredDesserts: Dessert[] = [
+  { 
+    id: 1, name: 'Pavlova Clásica', description: 'La clásica con un toque de pasión y cremoso glaseado.', price: 9.50, imageUrl: '/images/pavlova.jpg', colorTheme: 'red' 
+  },
+  { 
+    id: 2, name: 'Pavlova Corazón', description: 'Fresco y ligero, con un sabor que te transporta a la primavera.', price: 8.00, imageUrl: '/images/pavlovac.jpg', colorTheme: 'green' 
+  },
+  { 
+    id: 3, name: 'Pavlova Chocolate', description: 'Intenso chocolate con explosión de frescura de frutos rojos.', price: 7.25, imageUrl: '/images/pavlovach.jpg', colorTheme: 'red' 
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const LandingPage: React.FC = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen ">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-dark/50 backdrop-blur-sm border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className={`${bebas.className}`}><span className="text-rojo-letrac font-bold text-2xl">Pavlova</span></div>
+            <div className="hidden md:flex space-x-8">
+              <a href="#about" className="text-rojo-letrac hover:text-foreground">
+                  Acerca de
+              </a>
+              <a href="#products" className="text-rojo-letrac hover:text-foreground">
+                  Productos
+              </a>
+              <a href="#contact" className="text-rojo-letrac hover:text-foreground">
+                  Contacto
+              </a>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </nav>
+
+      {/* SECCIÓN 1: CABECERA Y CTA PRINCIPAL */}
+      <header className="py-0 h-130 text-center mt-0">
+        <Carousel />
+        {/* Más contenido */}
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="py-0 txtsmb text-4xl font-extrabold text-rojo-letrac text-center mb-0 mt-5"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          ¡El Capricho que tu día necesita!
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="txtsmb text-xl text-rojo-letrac mb-0 mt-0"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Postres Artesanales con Ingredientes Frescos.
+        </motion.p>
+
+      </header>
+
+              <label id="about"></label>
+      {/* SECCIÓN 2: CARACTERÍSTICAS / BENEFICIOS */}
+      <section className="py-0 mt-80">
+        <section className="anima1">
+          <div className="container mx-auto px-4">
+            <motion.h2
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold text-rojo-letrac text-center mb-5"
+            >
+              Hecho con Pasión y Calidad
+            </motion.h2>
+            <div className="flex justify-center gap-12 text-center">
+              {/* Beneficio 1 */}
+              <motion.div
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+                className="max-w-xs p-6 bg-verde-rossy rounded-lg shadow-md border-t-4 border-rojo-pasion hover:shadow-2xl"
+              >
+                <Heart className="w-10 h-10 text-rojo-pasion mx-auto mb-4 transition-transform duration-300 hover:scale-120" />
+                <h3 className="text-xl font-bold mb-2 text-rojo-letrac">Sabor Intenso</h3>
+                <p className="text-gray-600">Recetas que despiertan emociones fuertes en cada mordida.</p>
+              </motion.div>
+              {/* Beneficio 2 */}
+              <motion.div
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 0.7, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="max-w-xs p-6 bg-verde-rossy rounded-lg shadow-md border-t-4 border-verde-fresco hover:shadow-2xl"
+              >
+                <span className="text-5xl text-verde-fresco mb-4 block hover:rotate-45">🍃</span>
+                <h3 className="text-xl font-bold mb-2 text-rojo-letrac">Ingredientes Frescos</h3>
+                <p className="text-gray-600">Usamos solo productos de temporada para garantizar la calidad.</p>
+              </motion.div>
+              {/* Beneficio 3 */}
+              <motion.div
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 0.7, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="max-w-xs p-6 bg-verde-rossy rounded-lg shadow-md border-t-4 border-gris-texto hover:shadow-2xl"
+              >
+                <span className="text-5xl text-gris-texto mb-4 block hover:translate-x-2">👨‍🍳</span>
+                <h3 className="text-xl font-bold mb-2 text-rojo-letrac">Elaboración Artesanal</h3>
+                <p className="text-gray-600">Hechos a mano, con el cuidado y la dedicación de un chef.</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+              <label id="products"></label>
+      {/* SECCIÓN 3: POSTRES DESTACADOS (Galería) */}
+      <section id="menu" className="py-20">
+        <section className="anima1">
+          <div className="container mx-auto px-4">
+            <motion.h2
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold text-rojo-letrac text-center mb-16"
+            >
+              Nuestras Estrellas del Sabor
+            </motion.h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {featuredDesserts.map(dessert => (
+                <motion.div
+                  key={dessert.id}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover={{ scale: 1.06, boxShadow: "0 6px 14px #692abd22" }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <DessertCard dessert={dessert} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-15 mb-33 px-4 sm:px-6 lg:px-8">
+      <section className="anima1">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-rojo-letrac">Contacto</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className={`${"ocard"} "border-border group hover:shadow-4xl"`}>
+              <h3 className="text-3xl font-bold text-center mb-12 text-rojo-letrac">Información de Contacto</h3>
+              <div className="space-y-4 gap-8 pl-5">
+                <Link href={lkmimail} target="Otro">
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-gris-texto gap-3" />
+                    <span className="text-gris-texto">Correos</span>
+                  </div>
+                </Link><br/>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-gris-texto" />
+                  <span className="text-gris-texto">+58 424 299 7367</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-gris-texto" />
+                  <span className="text-gris-texto">Caracas, Venezuela</span>
+                </div>
+                <Link href={"https://www.linkedin.com/in/robert-gutierrez-06295946/"} target="Otro">
+                  <div className="flex items-center gap-3">
+                    <Linkedin className="h-5 w-5 text-gris-texto" />
+                    <span className="text-gris-texto">Linkedin</span>
+                  </div>
+                </Link><br/>
+                <Link href={lkmigith} target="Otro">
+                  <div className="flex items-center gap-3">
+                    <Github className="h-5 w-5 text-gris-texto" />
+                    <span className="text-gris-texto">Github</span>
+                  </div>
+                </Link><br/>
+              </div>
+            </Card>
+            <Card className={`${"ocard"} "border-border group hover:shadow-2xl"`}>
+              <CardContent>
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-3xl font-bold text-center mb-12 text-rojo-letrac">Contacto</h2>
+                  <CardContent>
+                    <ContactForm />
+                  </CardContent>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      </section>
+      {/* SECCIÓN 4: ÚLTIMA LLAMADA A LA ACCIÓN (Refuerzo) */}
+      <motion.section
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="bg-rojo-letrac py-2 text-center"
+      >
+        <h2 className="text-4xl font-bold text-white mb-2">
+          No esperes más para darte ese gusto inolvidable.
+        </h2>
+        <p className="text-xl text-white mb-2">
+          Realiza tu pedido en menos de 5 minutos.
+        </p>
+        <motion.a 
+          href="#order-form"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="bg-verde-letra text-white text-2xl font-bold py-1 px-10 rounded-full shadow-xl hover:bg-verde-letra/90 transition duration-300 transform hover:scale-105 inline-block"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          ¡Quiero Pedir Mis Postres Ya!
+        </motion.a>
+      </motion.section>
+
     </div>
   );
-}
+};
+
+export default LandingPage;

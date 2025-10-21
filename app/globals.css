@@ -1,13 +1,46 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background:   #ffffff;
+  --foreground:   #101010;
+
+  --rojo-pasion:  #AF0000;
+  --rojo-letra:   #700000;
+  --rojo-letrac:  #A00000;
+  --verde-rossy:  #BBDDBB80;
+  --verde-oscuro: #005000;
+  --verde-fresco: #60C06080;
+  --verde-letra:  #308030;
+  --verde-lona:   #4F885D
+  --verde-hoja:   #92A36D;
+  --rosa-rosy:    #DFA7AA;
+  --crema-base:   #FFFBF5;
+  --gris-texto:   #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  --color-rojo-pasion: var(--rojo-pasion);
+  --color-rojo-letra: var(--rojo-letra);
+  --color-rojo-letrac: var(--rojo-letrac);
+
+  --color-verde-rossy: var(--verde-rossy);
+  --color-verde-oscuro: var(--verde-oscuro);
+  --color-verde-fresco: var(--verde-fresco);
+  --color-verde-letra: var(--verde-letra);
+  --color-verde-lona: var(--verde-lona);
+  --color-verde-hoja: var(--verde-hoja);
+
+  --color-rosa-rosy: var(--rosa-rosy);
+
+  --color-crema-base: var(--crema-base);
+  --color-gris-texto: var(--gris-texto);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +49,53 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    
+    --rojo-pasion:  #AF0000;
+    --rojo-letrac:  #A00000;
+    --rojo-letra:   #700000;
+
+    --verde-rossy:  #BBDDBBC0;
+    --verde-oscuro: #005000;
+    --verde-fresco: #60C06080;
+    --verde-letra:  #308030;
+    --verde-lona:   #4b8e6380;
+    --verde-hoja:   #92A36D80;
+
+    --rosa-rosy:    #DFA7AA;
+
+    --crema-base:   #FFFBF5;
+    --gris-texto:   #333333;
   }
 }
 
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 50%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.anima1 {
+  view-timeline-name: --sesion;
+  view-timeline-axis: block;
+
+  animation-timeline: --sesion; /* Vincula la animación al scroll del documento */
+  /*animation-duration: 100ms;  La duración se puede considerar en píxeles */
+  animation-fill-mode: both; /* Mantiene los estilos iniciales y finales */
+  animation-name: show; /* Nombre de la animación */
+  animation-range: entry 25% cover 50%
+}
 body {
-  background: var(--background);
+  background: var(--verde-rossy);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+body * {
+  /* Transición de todas las propiedades durante 0.5 segundos con un ritmo 'ease-in' */
+  transition:         all 0.35s ease-in;
+  -webkit-transition: all 0.35s ease-in;
+  -o-transition:      all 0.35s ease-in;
 }
