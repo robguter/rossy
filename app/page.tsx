@@ -20,13 +20,13 @@ var imglogo = 'images/logo_pavlova.png'
 // --- Datos Mock ---
 const featuredDesserts: Dessert[] = [
   { 
-    id: 1, name: 'Pavlova Clásica', description: 'La clásica con un toque de pasión y cremoso glaseado.', price: 9.50, imageUrl: '/images/pavlova.jpg', colorTheme: 'red' 
+    id: 1, name: 'Pavlova Clásica', description: 'La clásica con un toque de pasión y cremoso glaseado.', price: 9.50, imageUrl: 'images/pavlova.jpg', colorTheme: 'red' 
   },
   { 
-    id: 2, name: 'Pavlova Corazón', description: 'Fresco y ligero, con un sabor que te transporta a la primavera.', price: 8.00, imageUrl: '/images/pavlovac.jpg', colorTheme: 'green' 
+    id: 2, name: 'Pavlova Corazón', description: 'Fresco y ligero, con un sabor que te transporta a la primavera.', price: 8.00, imageUrl: 'images/pavlovac.jpg', colorTheme: 'green' 
   },
   { 
-    id: 3, name: 'Pavlova Chocolate', description: 'Intenso chocolate con explosión de frescura de frutos rojos.', price: 7.25, imageUrl: '/images/pavlovach.jpg', colorTheme: 'red' 
+    id: 3, name: 'Pavlova Chocolate', description: 'Intenso chocolate con explosión de frescura de frutos rojos.', price: 7.25, imageUrl: 'images/pavlovach.jpg', colorTheme: 'red' 
   },
 ];
 
