@@ -7,10 +7,10 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 const images = [
-  '/images/pavcoche.jpg',
-  '/images/reposteria01.jpg',
-  '/images/reposteria02.jpg',
-  '/images/reposteria03.jpg',
+  'images/pavcoche.jpg',
+  'images/reposteria01.jpg',
+  'images/reposteria02.jpg',
+  'images/reposteria03.jpg',
 ];
 
 export default function Carousel() {
