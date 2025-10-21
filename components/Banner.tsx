@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 const images = [
-  '/images/pavcoche.jpg',
-  '/images/reposteria01.jpg',
-  '/images/reposteria02.jpg',
-  '/images/reposteria03.jpg',
+  'images/pavcoche.jpg',
+  'images/reposteria01.jpg',
+  'images/reposteria02.jpg',
+  'images/reposteria03.jpg',
 ];
 
 export default function Banner() {
