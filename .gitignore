@@ -1,8 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-README.md
-*.md
 /node_modules
 /.pnp
 .pnp.*
@@ -17,6 +15,7 @@ README.md
 
 # next.js
 /.next/
+/out/
 
 # production
 /build
