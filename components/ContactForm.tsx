@@ -89,7 +89,7 @@ const ContactForm: React.FC = () => { // DEJA SOLO React.FC si no recibe props
         onChange={handleChange}
         required
         disabled={isSubmitting}
-        className="bg-input border-border text-gris-texto placeholder:text-muted-background"
+        className="bg-input border-border border-white/50 text-gris-texto placeholder:text-muted-background"
       />
 
       {/* Input de Email */}
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => { // DEJA SOLO React.FC si no recibe props
         onChange={handleChange}
         required
         disabled={isSubmitting}
-        className="bg-input border-border text-gris-texto placeholder:text-muted-background"
+        className="bg-input border-border border-white/50 text-gris-texto placeholder:text-muted-background"
       />
       
       {/* Input de Asunto AGREGADO */}
@@ -113,7 +113,7 @@ const ContactForm: React.FC = () => { // DEJA SOLO React.FC si no recibe props
         onChange={handleChange}
         required
         disabled={isSubmitting}
-        className="bg-input border-border text-gris-texto placeholder:text-muted-background"
+        className="bg-input border-border border-white/50 text-gris-texto placeholder:text-muted-background"
       />
 
       {/* Textarea de Mensaje */}
@@ -125,7 +125,7 @@ const ContactForm: React.FC = () => { // DEJA SOLO React.FC si no recibe props
         onChange={handleChange}
         required
         disabled={isSubmitting}
-        className="bg-input border-border text-gris-texto placeholder:text-muted-background"
+        className="bg-input border-border border-white/50 text-gris-texto placeholder:text-muted-background"
       ></Textarea>
 
       {/* Mensaje de estado */}
@@ -136,8 +136,8 @@ const ContactForm: React.FC = () => { // DEJA SOLO React.FC si no recibe props
       )}
       
       {/* Botón de Envío */}
-      <Button variant="outline" type="submit" size="lg" disabled={isSubmitting} className="text-gris-texto bg-verde-rossy hover:bg-verde-hoja hover:text-gris-texto">
-        <Mail className="mr-2 h-4 w-4 text-gris-texto hover:text-verde-oscuro" />
+      <Button variant="outline" size="lg" className="ml-12 mr-9">
+        <Mail className="mr-2 h-4 w-4 mb-0 pb-0" />
         {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
       </Button>
     </form>
