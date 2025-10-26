@@ -11,7 +11,7 @@ const DessertCard: React.FC<DessertCardProps> = ({ dessert }) => {
   const priceColor = dessert.colorTheme === 'red' ? 'text-rojo-pasion' : 'text-verde-fresco';
 
   return (
-    <div className={`bg-white rounded-xl shadow-lg overflow-hidden border-b-4 ${borderColor} transition duration-300 hover:shadow-xl`}>
+    <div className={`bg-white rounded-xl shadow-lg overflow-hidden border-b-4 ${borderColor} transition duration-300 shadow-gris-texto shadow-2xl hover:shadow-xl`}>
       <img 
         src={dessert.imageUrl} 
         alt={dessert.name} 

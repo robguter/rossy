@@ -66,7 +66,7 @@ const LandingPage: React.FC = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="py-0 txtsmb text-4xl font-extrabold text-white text-center mb-0 mt-5"
+          className="text-shadow-(--mytext-sombra) py-0 text-4xl font-extrabold text-white text-center mb-0 mt-5"
         >
           ¡El Capricho que tu día necesita!
         </motion.h1>
@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="txtsmb text-xl text-white mb-0 mt-0"
+          className="text-shadow-(--mytext-sombra)  text-xl text-white mb-0 mt-0"
         >
           Postres Artesanales con Ingredientes Frescos.
         </motion.p>
@@ -92,11 +92,11 @@ const LandingPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-4xl txtsmb font-bold text-white text-center mb-5"
+              className="text-shadow-(--mytext-sombra)  text-4xl font-bold text-white text-center mb-5"
             >
               Hecho con Pasión y Calidad
             </motion.h2>
-            <div className="flex justify-center gap-12 text-center">
+            <div className="text-shadow-(--mytext-sombra)  flex justify-center gap-12 text-center">
               {/* Beneficio 1 */}
               <motion.div
                 variants={cardVariants}
@@ -104,11 +104,11 @@ const LandingPage: React.FC = () => {
                 whileInView="visible"
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="max-w-xs p-6 bg-rojo-pasion rounded-lg shadow-md border-t-4 border-white shadow-gris-texto shadow-2xl hover:shadow-xl"
+                className="text-shadow-(--mytext-sombra)  max-w-xs p-6 bg-rojo-pasion rounded-lg shadow-md border-t-4 border-white shadow-gris-texto shadow-2xl hover:shadow-xl"
               >
-                <Heart className="w-10 h-10 text-white mx-auto mb-4 transition-transform duration-300 hover:scale-120" />
-                <h3 className="text-xl txtsmb font-bold mb-2 text-white">Sabor Intenso</h3>
-                <p className="text-white/65">Recetas que despiertan emociones fuertes en cada mordida.</p>
+                <Heart className="text-shadow-(--mytext-sombra)  w-10 h-10 text-white mx-auto mb-4 transition-transform duration-300 hover:scale-120" />
+                <h3 className="text-shadow-(--mytext-sombra)  text-xl font-bold mb-2 text-white">Sabor Intenso</h3>
+                <p className="text-shadow-(--mytext-sombra)  text-white/65">Recetas que despiertan emociones fuertes en cada mordida.</p>
               </motion.div>
               {/* Beneficio 2 */}
               <motion.div
@@ -117,11 +117,11 @@ const LandingPage: React.FC = () => {
                 whileInView="visible"
                 transition={{ duration: 0.7, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="max-w-xs p-6 bg-rojo-pasion rounded-lg shadow-md border-t-4 border-white shadow-gris-texto shadow-2xl hover:shadow-xl"
+                className="text-shadow-(--mytext-sombra)  max-w-xs p-6 bg-rojo-pasion rounded-lg shadow-md border-t-4 border-white shadow-gris-texto shadow-2xl hover:shadow-xl"
               >
-                <span className="text-5xl text-verde-fresco mb-4 block hover:rotate-45">🍃</span>
-                <h3 className="text-xl txtsmb font-bold mb-2 text-white">Ingredientes Frescos</h3>
-                <p className="text-white/65">Usamos solo productos de temporada para garantizar la calidad.</p>
+                <span className="text-shadow-(--mytext-sombra)  text-5xl text-verde-fresco mb-4 block hover:rotate-45">🍃</span>
+                <h3 className="text-shadow-(--mytext-sombra)  text-xl font-bold mb-2 text-white">Ingredientes Frescos</h3>
+                <p className="text-shadow-(--mytext-sombra)  text-white/65">Usamos solo productos de temporada para garantizar la calidad.</p>
               </motion.div>
               {/* Beneficio 3 */}
               <motion.div
@@ -130,11 +130,11 @@ const LandingPage: React.FC = () => {
                 whileInView="visible"
                 transition={{ duration: 0.7, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="max-w-xs p-6 bg-rojo-pasion rounded-lg shadow-md border-t-4 border-white shadow-gris-texto shadow-2xl hover:shadow-xl"
+                className="text-shadow-(--mytext-sombra)  max-w-xs p-6 bg-rojo-pasion rounded-lg shadow-md border-t-4 border-white shadow-gris-texto shadow-2xl hover:shadow-xl"
               >
-                <span className="text-5xl text-gris-texto mb-4 block hover:translate-x-2">👨‍🍳</span>
-                <h3 className="text-xl txtsmb font-bold mb-2 text-white">Elaboración Artesanal</h3>
-                <p className="text-white/65">Hechos a mano, con el cuidado y la dedicación de un chef.</p>
+                <span className="text-shadow-(--mytext-sombra)  text-5xl text-gris-texto mb-4 block hover:translate-x-2">👨‍🍳</span>
+                <h3 className="text-shadow-(--mytext-sombra)  text-xl font-bold mb-2 text-white">Elaboración Artesanal</h3>
+                <p className="text-shadow-(--mytext-sombra)  text-white/65">Hechos a mano, con el cuidado y la dedicación de un chef.</p>
               </motion.div>
             </div>
           </div>
@@ -143,19 +143,19 @@ const LandingPage: React.FC = () => {
 
               <label id="products"></label>
       {/* SECCIÓN 3: POSTRES DESTACADOS (Galería) */}
-      <section id="menu" className="py-20">
-        <section className="anima1">
-          <div className="container mx-auto px-4">
+      <section id="menu" className="text-shadow-(--mytext-sombra)  py-20">
+        <section className="text-shadow-(--mytext-sombra)  anima1">
+          <div className="text-shadow-(--mytext-sombra)  container mx-auto px-4">
             <motion.h2
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-4xl txtsmb font-bold text-white text-center mb-16"
+              className="text-shadow-(--mytext-sombra) text-4xl font-bold text-white text-center mb-16"
             >
               Nuestras Estrellas del Sabor
             </motion.h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-shadow-(--mytext-sombra) grid md:grid-cols-3 gap-8">
               {featuredDesserts.map(dessert => (
                 <motion.div
                   key={dessert.id}
@@ -178,15 +178,15 @@ const LandingPage: React.FC = () => {
       <section id="contact" className="py-15 mb-33 px-4 sm:px-6 lg:px-8">
       <section className="anima1">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl txtsmb font-bold text-center mb-12 text-white border-b ml-88 mr-88">Contactanos</h2>
+          <h2 className="text-shadow-(--mytext-sombra) text-3xl font-bold text-center mb-12 text-white border-b ml-88 mr-88">Contactanos</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="shadow-gris-texto shadow-2xl hover:shadow-xl">
-              <h3 className="text-3xl txtsmb font-bold text-center mb-12 text-white border-b ml-10 mr-10">Información de Contacto</h3>
+            <Card>
+              <h3 className="text-shadow-(--mytext-sombra) text-3xl font-bold text-center mb-12 text-white border-b ml-10 mr-10">Información de Contacto</h3>
               <div className="space-y-4 gap-8 pl-5">
                 <Link href={lkmimail} target="Otro">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-white gap-3" />
-                    <span className="text-white">Correos</span>
+                    <span className="text-shadow-(--mytext-sombra) text-white">Correos</span>
                   </div>
                 </Link><br/>
                 <div className="flex items-center gap-3">
@@ -211,10 +211,10 @@ const LandingPage: React.FC = () => {
                 </Link><br/>
               </div>
             </Card>
-            <Card className="shadow-gris-texto shadow-2xl hover:shadow-xl">
+            <Card>
               <CardContent>
                 <div className="max-w-4xl mx-auto">
-                  <h2 className="text-3xl txtsmb font-bold text-center mb-12 text-white border-b ml-35 mr-35">Email</h2>
+                  <h2 className="text-shadow-(--mytext-sombra) text-3xl font-bold text-center mb-12 text-white border-b ml-35 mr-35">Email</h2>
                   <CardContent>
                     <ContactForm />
                   </CardContent>
